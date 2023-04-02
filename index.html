@@ -4,27 +4,39 @@
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Horiseon's website</title>
+    <title>Horiseon's website</title> <!-- Rename the title. -->
 </head>
 
 <body>
-    <header> <!-- change this div to header -->
-        <nav> <!-- simplify the code and regroup the items in list into a nav -->
-            <h1>Hori<span class="seo">seo</span>n</h1>
-            <div>
+    <!-- General Changes: -->
+    <!-- 1. Use semantic elements to replace most of the div tag, such as <header>, <section>, <article>, etc. -->
+    <!-- 2. Reusable components are given class names which better describe their purposes. -->
+    <!-- 3. Some of the original class names are reused to be id. -->
+    <!-- 4. "alt" is added to each <img> for the situation that the image cannot be loaded. -->
+    <header>
+    <!-- Changes in the header: -->
+    <!-- 1. <ul> is no longer used for organizing the links, a div is used instead. -->
+    <!-- 2. ids "company-name", "company-name-middle", "link-container" are used to better describe the purpose of the coomponents -->
+        <nav>
+            <h1 id="company-name">Hori<span id="company-name-middle">seo</span>n</h1>
+            <div id="link-container">
                 <a href="#search-engine-optimization">Search Engine Optimization</a>
                 <a href="#online-reputation-management">Online Reputation Management</a>
                 <a href="#social-media-marketing">Social Media Marketing</a>
             </div>
         </nav>
     </header>
-    <!-- the original div was confusing so change it to img, which make is easy to understand the purpose-->
-    <img class="hero" src="./assets/images/digital-marketing-meeting.jpg" alt="marketing-meeting"/>
-    <!-- add space between different components to increase readability-->
-    <section id="service-col"> 
-    <!--The original class of "contents" is changed to id "content-col" as the class is not reused, the same for the "benefits"-->
+    <!-- Change in the component containing hero-image: -->
+    <!-- Originally, the div with class "hero" which serves as the image container is confusing as the -->
+    <!-- url of the image is put in the css. Now, the div is changed to <img> which better described its purpose. -->
+    <img id="hero-image" src="./assets/images/digital-marketing-meeting.jpg" alt="marketing-meeting" />
+    <!-- Change to the left-column: -->
+    <!-- 1. The div with class name "content" is renamed as "service-col". -->
+    <!-- 2. The articles inside the column are given the same class name and different ids. -->
+    <!-- 3. Classes of "float-left" and "float-right" are no longer used as they only applied once or twice. -->
+    <section id="service-col">
         <article class="service-article" id="search-engine-optimization">
-            <img src="./assets/images/search-engine-optimization.jpg" alt="search-engine-optimization" class="float-left"/>
+            <img src="./assets/images/search-engine-optimization.jpg" alt="a notebook showing the concept of search engine optimization on a desk"/>
             <h2>Search Engine Optimization</h2>
             <p>
                 The dominance of mobile internet use means that users are searching for the right business as they travel, shop, or sit on their couch at home. Search Engine Optimization (SEO) allows you to increase your visibility and find the right customers for your business.
@@ -32,7 +44,7 @@
         </article>
 
         <article class="service-article" id="online-reputation-management">
-            <img src="./assets/images/online-reputation-management.jpg" alt="online-reputation-management" class="float-right"/>
+            <img src="./assets/images/online-reputation-management.jpg" alt="a person checking the reputation of a company online using laptop"/>
             <h2>Online Reputation Management</h2>
             <p>
                 The web is full of opinions, and some of these can be negative. Social media allows anyone with an internet connection to say whatever they want about your business. Online Reputation Management gives you the control over what potential customers see when they search for your business.
@@ -40,41 +52,42 @@
         </article>
 
         <article class="service-article" id="social-media-marketing">
-            <img src="./assets/images/social-media-marketing.jpg" alt="social-media-marketing" class="float-left"/>
+            <img src="./assets/images/social-media-marketing.jpg" alt="a meeting discussing the ways of doing social media marketing"/>
             <h2>Social Media Marketing</h2>
             <p>
                 Social media continues to have a sizable influence on buying habits. Social media marketing helps you determine which platforms are suited to your brand, using analytics to find the right markets and increase your lead generation.
             </p>
         </article>
     </section>
-
+    <!-- Change to the right-column: -->
+    <!-- 1. The div with class name "benefits" is renamed as "benefit-col". -->
+    <!-- 2. The articles inside the column are given the same class name and different ids. -->
     <section id="benefit-col">
-        <!--As the style of each of the benefit articles are the same, they should have the same class and different ids-->
-        <article class="benefit-article" id="lead">
+        <article class="benefit-article" id="lead-generation">
             <h3>Lead Generation</h3>
-            <img src="./assets/images/lead-generation.png" alt="lead-generation" />
+            <img src="./assets/images/lead-generation.png" alt="a machine generating money" />
             <p>
                 Inbound strategies for lead generation require less work for your business, bringing customers directly to your website.
             </p>
         </article>
 
-        <article class="benefit-article" id="brand">
+        <article class="benefit-article" id="brand-awareness">
             <h3>Brand Awareness</h3>
-            <img src="./assets/images/brand-awareness.png" alt="brand-awareness" />
+            <img src="./assets/images/brand-awareness.png" alt="a bulb in the head of a person is shining to increase visibility" />
             <p>
                 Users find your business through paid and organic searches, increasing the search ranking and visibility for your business.
             </p>
         </article>
 
-        <article class="benefit-article" id="cost">
+        <article class="benefit-article" id="cost-management">
             <h3>Cost Management</h3>
-            <img src="./assets/images/cost-management.png" alt="cost-management" />
+            <img src="./assets/images/cost-management.png" alt="a gear and money" />
             <p>
                 As the search ranking for your business increases, your advertising costs decrease, and you no longer need to advertise your page.
             </p>
         </article>
     </section>
-
+    
     <footer>
         <h2>Made with ❤️️ by Horiseon</h2>
         <p>

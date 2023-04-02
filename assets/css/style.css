@@ -1,3 +1,6 @@
+/*General changes to css*/
+/*1. ids are used to increase readability and simplify the selectors of the components.*/
+/*2. Attributes are reorganized. For example, "color" is put in the body as the text-colors are the same for most of the components.*/
 * {
     box-sizing: border-box;
     padding: 0;
@@ -6,54 +9,51 @@
 
 body {
     background-color: #d9dcd6;
-    color: #ffffff; /*as the font-color for all text are the same, the property is better to be put in the body*/
+    color: #ffffff;
 }
 
-/*css for header*/
+/*css for the component of header*/
+/*No longer need the "list-style-type" as <ul> is not used.*/
 header {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #2a607c;
 }
 
-header h1 {
-    display: inline-block;
+#company-name {
     font-size: 48px;
+    display: inline-block;
 }
 
-header h1 .seo {
+#company-name-middle {
     color: #d9dcd6;
 }
 
-header div {
+#link-container {
     padding-top: 15px;
     margin-right: 20px;
     float: right;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
 }
 
 a {
     text-decoration: none;
-    display: inline-block;
     margin-left: 25px;
-}
-
-a:-webkit-any-link {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
     color: #ffffff;
 }
 
-p {
-    font-size: 16px;
-}
-
 /*css of the hero image*/
-.hero {
+/*1. The css is changed as the url of the hero-image is not put in the "background-image" anymore.*/
+/*2. "object-fit" replaces the "background-size" and "background-position" */
+#hero-image {
+    height: 800px;
     width: 100%;
     margin-bottom: 25px;
+    object-fit: cover;
 }
 
-/*css of the content column*/
+/*css of the service column*/
 #service-col {
     width: 75%;
     display: inline-block;
@@ -66,26 +66,24 @@ p {
     height: 300px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #0072bb;
+    font-size: 16px;
 }
-
+/*float-left and float-right are integrated into others to further simplified the css*/
 .service-article img {
     max-height: 200px;
+    float: left;
+    margin-right: 25px;
+}
+
+#online-reputation-management img {
+    float: right;
+    margin-right: 0;
+    margin-left: 25px;
 }
 
 .service-article h2 {
     margin-bottom: 20px;
     font-size: 36px;
-}
-
-/*positioning style of image in service-article*/
-.float-left {
-    float: left;
-    margin-right: 25px;
-}
-
-.float-right {
-    float: right;
-    margin-left: 25px;
 }
 
 /*css of the benefit column*/
@@ -100,6 +98,7 @@ p {
 .benefit-article {
     margin-bottom: 32px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
 }
 
 .benefit-article h3 {
@@ -113,6 +112,7 @@ p {
     max-width: 150px;
 }
 
+/*css for footer*/
 footer {
     padding: 30px;
     clear: both;
