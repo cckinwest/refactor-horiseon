@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Horiseon's website</title> <!-- Rename the title. -->
 </head>
@@ -15,15 +16,17 @@
     <!-- 4. "alt" is added to each <img> for the situation that the image cannot be loaded. -->
     <header>
     <!-- Changes in the header: -->
-    <!-- 1. <ul> is no longer used for organizing the links, a div is used instead. -->
+    <!-- 1. <ul> is kept and it is changed to a drop-down menu when the size of screen changed. -->
     <!-- 2. ids "company-name", "company-name-middle", "link-container" are used to better describe the purpose of the coomponents -->
-        <nav>
-            <h1 id="company-name">Hori<span id="company-name-middle">seo</span>n</h1>
-            <div id="link-container">
-                <a href="#search-engine-optimization">Search Engine Optimization</a>
-                <a href="#online-reputation-management">Online Reputation Management</a>
-                <a href="#social-media-marketing">Social Media Marketing</a>
-            </div>
+    <!-- 3. menu-btn and menu-content are added for responsive design.-->
+        <h1 id="company-name">Hori<span id="company-name-middle">seo</span>n</h1>
+        <nav id="menu">
+            <label id="menu-btn">Menu</label> <!--A new button is added to control the drop down menu, but it's hidden when the screen width is max.-->
+            <ul id="menu-content">
+                <li><a href="#search-engine-optimization">Search Engine Optimization</a></li>
+                <li><a href="#online-reputation-management">Online Reputation Management</a></li>
+                <li><a href="#social-media-marketing">Social Media Marketing</a></li>
+            </ul>
         </nav>
     </header>
     <!-- Change in the component containing hero-image: -->

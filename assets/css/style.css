@@ -13,26 +13,45 @@ body {
 }
 
 /*css for the component of header*/
-/*No longer need the "list-style-type" as <ul> is not used.*/
 header {
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #2a607c;
+    display: flex;
+    flex-wrap: wrap; /*Make the links go to next line when the width of screen less than 1024px.*/
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+#menu-btn { /*The styling of the menu button*/
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 60px;
+    width: 60px;
+    background-color: #2a607c;
+    display: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    color: white;
 }
 
 #company-name {
     font-size: 48px;
-    display: inline-block;
 }
 
 #company-name-middle {
     color: #d9dcd6;
 }
 
-#link-container {
-    padding-top: 15px;
+#menu {
     margin-right: 20px;
-    float: right;
+}
+
+#menu li {
+    list-style-type: none;
+    display: inline;
 }
 
 a {
@@ -63,7 +82,7 @@ a {
 .service-article {
     margin-bottom: 20px;
     padding: 50px;
-    height: 300px;
+    min-height: 300px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #0072bb;
     font-size: 16px;
@@ -123,4 +142,59 @@ footer {
 
 footer h2 {
     font-size: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        justify-content: center;
+    }
+
+    #service-col {
+        width: 100%; /*make both columns occupying the whole width and service-column is on the top when the width is 1024px.*/
+        margin: 0;
+    }
+
+    #benefit-col {
+        width: 100%;
+        float: none;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #menu-content { /*the links in the header is hidden when the width is 768px*/
+        display: none;
+    }
+    
+    #menu-btn { /*the button appears when the width is 768px*/
+        display: block;
+    }
+    
+    #menu:hover #menu-content { /*when the button is hovered, the links will appear in block.*/
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 80px;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0.4)
+    }
+    
+    #menu:hover #menu-content li {
+        display: block;
+    }
+    
+    #menu:hover #menu-content a {
+        display: block;
+        margin-left: 0;
+    }
+
+    #service-col { /*make the contents in service-article to be displayed in block to save space when the width is 768px*/
+        display: block;
+        align-items: center;
+    }
+
+    #service-col img {
+        float: none;
+        margin: 0;
+    }
 }
